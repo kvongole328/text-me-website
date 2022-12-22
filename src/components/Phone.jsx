@@ -101,7 +101,7 @@ const [process,setProcess] = useState(false)
 
             </form>
             ): 
-            <p className='text-white'> Check your phone! </p>
+            <p className='text-white'> Check phone!! </p>
             }
             
             </div> 
