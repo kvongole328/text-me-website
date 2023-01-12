@@ -27,7 +27,7 @@ const Hero = () => (
 
         </div>
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-            <img src={iphone} alt="billing" className="object-contain  h-[501px] w-[75%]  relative z-[5]" />
+            <img src={iphone} alt="billing" className="object-contain  h-[500px] w-[75%]  relative z-[5]" />
 
         </div>
         
