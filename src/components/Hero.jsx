@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../style';
-import {robot} from '../assets'
+import {robot,iphone} from '../assets'
 const Hero = () => (
     <section id ="home" className={`flex 
     md:flex-row flex-col `}>
@@ -27,7 +27,7 @@ const Hero = () => (
 
         </div>
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-            <img src={robot} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
+            <img src={iphone} alt="billing" className="object-contain  h-[500px] w-[75%]  relative z-[5]" />
 
         </div>
         

@@ -26,14 +26,14 @@ const [process,setProcess] = useState(false)
         event.preventDefault()
         Axios({
             method: 'post',
-            url: '',
+            url: import.meta.env.VITE_SEND_SMS_URL,
             params: {
                 phone_number: phone,
             },
             auth: { 
-                username: '',
-                password: '',
-                grant_type: '',
+                username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
+                password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
+                
             },
     
         }).then(res => {
@@ -50,15 +50,15 @@ const [process,setProcess] = useState(false)
         event.preventDefault() 
         Axios({
             method: 'post',
-            url: '',
+            url: import.meta.env.VITE_VERIFY_SMS_URL,
             params: {
                 phone_number: phoneInserted,
                 verification_code: verification, 
             },
             auth: { 
-                username: '',
-                password: '',
-                grant_type: '',
+                username: import.meta.env.VITE_BASIC_AUTH_USERNAME,
+                password: import.meta.env.VITE_BASIC_AUTH_PASSWORD,
+                
             },
     
         }).then(res => {
@@ -77,22 +77,24 @@ const [process,setProcess] = useState(false)
     };
     
    return (
-    <div className={`flex 
-    md:flex-col flex-row `}>
-        <div className={`flex-1 ${styles.flexStart}
-        flex-col x1:px-0 sm:px-16 px-6  text-white`}>
-            
+    <div className={`flex justify-start text-white `}>
+        <div className={` ${styles.flexStart}
+        flex-wrap xl:flex-nowrap x1:px-0 sm:px-16 px-6  text-white`}>
+        
             {
             !verified ? (
                 !process ? 
                 (
-                    <form onSubmit= {sendVerification} className='flex flex-row space-x-4 flex-auto'>
-                    <input type ="tel" value={phone} onChange={event => setPhone(event.target.value)} className='"flex-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'  placeholder= "Enter your Phone Number" required>
+                <div> 
+                    <form onSubmit= {sendVerification} className='flex'>
+                    <div className='pr-4'> 
+                    <input type ="tel" value={phone} onChange={event => setPhone(event.target.value)} className='" bg-gray-50 border border-gray-300 text-left text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'  placeholder= "Phone Number" required>
                     </input>
-                    <button type="submit" class="flex-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    </div>
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-auto px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
     
                 </form>
-             
+                </div>
                 ) : 
                 <form onSubmit= {verifyCode} className='flex flex-row space-x-4 flex-auto'>
                 <input type ="tel" value={verification} onChange={event => setVerification(event.target.value)} className='"flex-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'  placeholder= "Enter your verification code" required>
