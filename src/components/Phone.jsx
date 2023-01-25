@@ -89,8 +89,7 @@ const [process,setProcess] = useState(false)
             if (res.data['Status'] === 200 )
             {
                 setVerified(true)
-
-
+                setInProgress(false)
             }
         }).catch(err => {
             console.log(err)
