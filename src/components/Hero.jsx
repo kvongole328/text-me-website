@@ -8,16 +8,13 @@ const Hero = () => (
         flex-col x1:px-0 sm:px-16 px-6`}>
             <div className ='flex flex-row justify-between items-center
             w-full'>
-                <h1 className='flex-1 font-poppins font-semibold
-                ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]'>
-                    Sometimes <br className = "sm:block hidden" />
-                    {" "}
-                    <span
-                    className='text-gradient'> Texting </
-                     span> {" "}
-                    <br></br> Is easier 
-    
-                </h1>
+                <h1
+    className="flex-1 font-poppins font-semibold
+ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]"
+  >
+    Sometimes <br className="sm:block hidden" />{" "}
+    <span className="text-gradient"> Texting </span> <br></br> Is easier
+  </h1>
             </div>
             <p className={`${styles.paragraph} max-w-[47]`} >
              Get anything answered right from your phone with Text Me. Ask it 

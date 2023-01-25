@@ -3,6 +3,8 @@ import styles from './style';
 
 import { Navbar, Hero, Footer, Button, Phone} from './components';
 
+
+
 const App = () => {
   return (
     <div className ="bg-primary w-full overflow-hidden">
