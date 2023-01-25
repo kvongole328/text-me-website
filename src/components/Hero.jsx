@@ -17,9 +17,9 @@ ss:text-[72px] text-[52px] text-white ss:leading-[100px] leading-[75px]"
   </h1>
             </div>
             <p className={`${styles.paragraph} max-w-[47]`} >
-             Get anything answered right from your phone with Text Me. Ask it 
-             for recipes, inspiration for your blog or even to write you a thank you card!
-             Everything is fair game.       
+            Powered by GPT, get anything answered right from your phone. You can ask for recipes, inspiration for your blog or even an email draft! 
+            We think it's just easier to text. 
+            
             </p>
 
         </div>
